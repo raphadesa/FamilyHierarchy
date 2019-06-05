@@ -1,8 +1,7 @@
 ﻿window.drawChart = (data) => {
     google.load("visualization", "1", { packages: ["orgchart"] });
     google.setOnLoadCallback(drawGoogleChart);    
-    function drawGoogleChart() {
-        console.log('tets');
+    function drawGoogleChart() {        
         var dt = new google.visualization.DataTable();
         dt.addColumn('string', 'Entity');
         dt.addColumn('string', 'ParentEntity');
