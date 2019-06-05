@@ -1,0 +1,65 @@
+﻿@page "/"
+@namespace FamilyHierarchy.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var hierarchies = new Data.Hierarchies();
+    var data = hierarchies.data;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FamilyHierarchy</title>
+    <base href="~/" />
+    <environment include="Development">
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="css/bootstrap/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link href="css/site.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        @*google.load("visualization", "1", { packages: ["orgchart"] });
+        //window.drawChart = (data) => {
+    //google.load("visualization", "1", { packages: ["orgchart"] });
+    google.setOnLoadCallback(drawGoogleChart);
+    function drawGoogleChart() {
+        console.log('tets');
+        var dt = new google.visualization.DataTable();
+        dt.addColumn('string', 'Entity');
+        dt.addColumn('string', 'ParentEntity');
+        dt.addColumn('string', 'ToolTip');
+        @for (var i = 0; i < @data.Count; i++) {
+            var memberId =data[i].MemberId;
+            //console.log(memberId);
+            var memberName = data[i].Name;
+            //console.log(memberId);
+            var parentId = data[i].ParentId.HasValue ? data[i].ParentId.ToString() : "";
+            <text>
+            dt.addRows([[{
+                v: '@memberId',
+                f: '@memberName' + '<div><img src = "img/' + '@memberId' + '.jpg" /></div>'
+            }, '@parentId', '@memberName']]);
+           </text>
+        }
+        //var c = document.getElementById("chart");
+        var chart = new google.visualization.OrgChart(document.getElementById("chart"));
+        chart.draw(dt, { allowHtml: true });*@
+    //}
+//};
+
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>    
+    <app>@(await Html.RenderComponentAsync<App>())</app>
+
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

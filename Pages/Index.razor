@@ -1,0 +1,21 @@
+﻿@page "/"
+@inject IJSRuntime JsRuntime
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<div id="chart">
+
+</div>
+
+@functions
+{
+    protected override async Task OnAfterRenderAsync()
+    {
+        var hierarchies = new Data.Hierarchies();
+        var data = hierarchies.data;
+        await JsRuntime.InvokeAsync<Task>("drawChart", data);
+    }
+
+
+}
