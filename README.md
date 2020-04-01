@@ -5,4 +5,4 @@ https://www.aspsnippets.com/Articles/Create-Family-Tree-Hierarchy-Chart-from-Dat
 
 Here is a working demo: https://blazordemos.exceldev.com
 
-
+Updated to .NET 3.1
