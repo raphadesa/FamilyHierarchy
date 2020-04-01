@@ -27,8 +27,9 @@
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>    
-    <app>@(await Html.RenderComponentAsync<App>())</app>
-
+    <app>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
     <script src="_framework/blazor.server.js"></script>
 </body>
 </html>

@@ -8,14 +8,13 @@ Welcome to your new app.
 
 </div>
 
-@functions
+@code
 {
-    protected override async Task OnAfterRenderAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         var hierarchies = new Data.Hierarchies();
         var data = hierarchies.data;
         await JsRuntime.InvokeAsync<Task>("drawChart", data);
     }
-
 
 }
