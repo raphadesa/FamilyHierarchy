@@ -8,3 +8,5 @@ https://www.aspsnippets.com/Articles/Create-Family-Tree-Hierarchy-Chart-from-Dat
 You can see a [live demo here](https://blazordemos.exceldev.com/familytree) !
 
 Updated to .NET 3.1
+
+"This project is licensed under the terms of the MIT license."
